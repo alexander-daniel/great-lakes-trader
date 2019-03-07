@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "^8.0.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
+}
