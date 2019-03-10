@@ -2,14 +2,29 @@ import { connect } from 'react-redux';
 import * as actions from '../lib/actions';
 import { UI_SCENES } from '../lib/types';
 
-const Choices = ({ setCurrentScene }) => {
+const Choices = ({ setCurrentScene, currentIsland, destinations }) => {
+  const { hasBank, hasWarehouse, hasMoneyLender } = destinations.filter(d => d.id === currentIsland.islandID)[0];
   return (
-    <div style={{ padding: '10px' }}>
+    <div style={{ width: '320px', padding: '10px', display: 'flex', flexDirection: 'column' }}>
       <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_BUYING)}>{'Buy'}</button>
       <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_SELLING)}>{'Sell'}</button>
+      {
+        hasBank ?
+        <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_BANKING)}>{'Visit Bank'}</button>
+        : null
+      }
+      {
+        hasMoneyLender ?
+        <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_BORROWING)}>{'Visit Mo\' the Money Lender'}</button>
+        : null
+      }
+      {
+        hasWarehouse ?
+        <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_STORING)}>{'Visit Warehouse'}</button>
+        : null
+      }
       <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_LEAVING)}>{'Leave'}</button>
-
-      {/* TODO: check if desintation has a bank or a money lender */}
+      {/* TODO: check if desintation has a money lender */}
     </div>
   );
 };

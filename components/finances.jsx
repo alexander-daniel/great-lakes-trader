@@ -9,7 +9,7 @@ const Finances = ({ cash, bank, loan }) => {
         { title: 'Bank', value: bank },
         { title: 'Loan', value: loan }
       ].map((i) => (
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div key={i.title} style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>{`${i.title} :`}</div>
           <div>{`${i.value.toFixed(0)} $`}</div>
         </div>

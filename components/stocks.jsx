@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
+import { getTotalCargoWeight } from '../lib/selectors';
 
-const Stocks = ({ ship, currentIsland, warehouse }) => {
+const Stocks = ({ ship, currentIsland, warehouse, maxStorage, currentCargoWeight }) => {
   return (
     <div style={{ display: 'flex', width: 'fit-content' }}>
       <div className="panel">
-        <h3>{'Ship Manifest'}</h3>
+        <h3>{`Ship ${currentCargoWeight}/${maxStorage}kg`}</h3>
         {Object.keys(ship.storage.contents).map((goodType, i) => {
           return (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -42,4 +43,10 @@ const Stocks = ({ ship, currentIsland, warehouse }) => {
   );
 };
 
-export default connect((state) => ({ ...state }))(Stocks);
+export default connect(
+  (state) => ({
+    ...state,
+    maxStorage: state.ship.storage.max,
+    currentCargoWeight: getTotalCargoWeight(state)
+  })
+)(Stocks);

@@ -6,15 +6,15 @@ const Selling = (props) => {
   const { setCurrentScene, sell, currentIsland, ship } = props;
 
   return (
-    <div style={{ padding: '10px', width: '200px' }}>
+    <div style={{ padding: '10px', width: '320px' }}>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <h3 style={{ display: 'flex', justifyContent: 'space-between' }}>
         {'Sell what item?'}
         <button onClick={setCurrentScene.bind(null, UI_SCENES.NULL)}>{'Back'}</button>
-      </div>
+      </h3>
 
       {Object.keys(currentIsland.market).map((goodType, i) => {
-        const max = ship.storage.contents[goodType]
+        const max = ship.storage.contents[goodType];
         return (
           <div key={i} style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>{`${goodType}`}</div>
@@ -30,7 +30,12 @@ const Selling = (props) => {
                 <button onClick={sell.bind(null, goodType, 5)}>{5}</button>
                 : null
               }
-              <button onClick={sell.bind(null, goodType, max)}>{`Max (${max})`}</button>
+              <button
+                onClick={sell.bind(null, goodType, max)}
+                style={{ minWidth: '90px' }}
+              >
+                {`Max (${max})`}
+              </button>
             </div>
           </div>
         );
