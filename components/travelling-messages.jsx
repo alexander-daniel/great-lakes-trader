@@ -9,7 +9,7 @@ const TravellingMessages = (props) => {
 
   return (
     <div style={{ padding: '10px', width: '320px' }}>
-      <div style={{ marginBottom: '10px', whiteSpace: 'pre' }}>{travelMessage}</div>
+      <div style={{ marginBottom: '10px', whiteSpace: 'pre-wrap' }}>{travelMessage}</div>
       {
         travelChoices ?
         travelChoices.map(c => <button key={c} onClick={onSelect.bind(null, c)}>{c}</button>)

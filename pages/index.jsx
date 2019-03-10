@@ -30,7 +30,7 @@ export default () => {
           `}
         </p>
 
-        <Link href="/play"><button>{'Click here to start'}</button></Link>
+        <Link href="/trader"><button>{'Click here to start'}</button></Link>
 
 
         <div style={{ position:'absolute', bottom: '10px' }}>

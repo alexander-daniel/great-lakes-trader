@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import { connect } from 'react-redux';
 import * as actions from '../lib/actions';
 import { UI_SCENES } from '../lib/types';
 
-const Choices = ({ setCurrentScene, currentIsland, destinations }) => {
+const Choices = ({ setCurrentScene, currentIsland, destinations, loan }) => {
   const { hasBank, hasWarehouse, hasMoneyLender } = destinations.filter(d => d.id === currentIsland.islandID)[0];
   return (
     <div style={{ width: '320px', padding: '10px', display: 'flex', flexDirection: 'column' }}>
@@ -24,6 +25,7 @@ const Choices = ({ setCurrentScene, currentIsland, destinations }) => {
         : null
       }
       <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_LEAVING)}>{'Leave'}</button>
+      <Link href="/retire"><button>{'Retire'}</button></Link>
       {/* TODO: check if desintation has a money lender */}
     </div>
   );
