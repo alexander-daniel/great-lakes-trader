@@ -7,11 +7,27 @@ import Selling from '../components/selling';
 import Finances from '../components/finances';
 import Stocks from '../components/stocks';
 import Choices from '../components/choices';
+import TravellingMessages from '../components/travelling-messages';
+import Banking from '../components/banking';
+import Warehouse from '../components/warehouse';
+import MoneyLender from '../components/moneylender';
 
 import '../styles/reset.css';
 import '../styles/index.css';
 
 class Interface extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      musicPlaying: true
+    };
+  }
+
+  toggleMusic() {
+    this.setState({ musicPlaying: !this.state.musicPlaying });
+  }
+
   renderInteractive() {
     const {
       currentScene
@@ -24,6 +40,14 @@ class Interface extends React.Component {
         return <Buying />;
       case UI_SCENES.IS_SELLING:
         return <Selling />;
+      case UI_SCENES.IS_BANKING:
+        return <Banking />;
+      case UI_SCENES.IS_STORING:
+        return <Warehouse />;
+      case UI_SCENES.IS_TRAVELLING:
+        return <TravellingMessages />;
+      case UI_SCENES.IS_BORROWING:
+        return <MoneyLender />;
       default:
         return <Choices />;
     }
@@ -41,9 +65,10 @@ class Interface extends React.Component {
     return (
       <div style={{ fontFamily: 'monospace' }}>
         <div style={{ marginLeft: '10px' }}>
-          <h1>{'Great Lakes'}</h1>
+          <h1>{'Great Lakes Trader'}</h1>
           <h2>{`${currentLocation}`}</h2>
           <div>{`${date.day} ${date.month} ${date.year}`}</div>
+          <audio src="/static/outside-your-comfort-zone.mp3" autoPlay muted={!this.state.musicPlaying}/>
         </div>
 
         <Stocks />
@@ -53,6 +78,12 @@ class Interface extends React.Component {
           {this.renderInteractive()}
         </div>
 
+        <div
+          onClick={this.toggleMusic.bind(this)}
+          style={{ position: 'absolute', top: 300, left: 20, display: 'flex', width: 'fit-content', cursor: 'pointer' }}
+        >
+          {!this.state.musicPlaying ? '🔇' : '🔈'}
+        </div>
       </div>
     );
   }

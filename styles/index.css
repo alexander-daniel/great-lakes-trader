@@ -1,5 +1,8 @@
 body {
   padding: 10px;
+  color: #f3f3f3;
+  background: rgba(0,0,0,0.90);
+  zoom: 1.5;
 }
 
 h1, h2, h3, h4, h5 {
@@ -14,3 +17,27 @@ p {
   padding: 10px;
   width: 150px;
 }
+
+button:focus{
+  outline: none;
+}
+
+button {
+  border-color: white;
+  border-radius: 3px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  font-family: monospace;
+  /* background: transparent; */
+  /* color: white; */
+  /* padding: 0; */
+}
+/*
+button:before {
+  content: "[ "
+}
+
+button:after {
+  content: " ]"
+} */
+
