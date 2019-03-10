@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "great-lakes-game",
+  "alias": [
+    "great-lakes-trader.now.sh",
+    "for-chris.now.sh"
+  ],
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+}
