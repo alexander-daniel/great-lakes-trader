@@ -5,7 +5,7 @@ import '../styles/index.css';
 export default () => {
   return (
     <div style={{ fontFamily: 'monospace' }}>
-      <div style={{ marginLeft: '10px', width: '600px' }}>
+      <div style={{ width: '600px' }}>
         <h1>{'Great Lakes Trader'}</h1>
         <h3>{'A Taipan-like game of profit and adventure'}</h3>
         <p>
@@ -31,6 +31,11 @@ export default () => {
         </p>
 
         <Link href="/play"><button>{'Click here to start'}</button></Link>
+
+
+        <div style={{ position:'absolute', bottom: '10px' }}>
+          {'Audio Credit: snkrthief'}
+        </div>
 
       </div>
     </div>
