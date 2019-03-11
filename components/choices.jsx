@@ -16,7 +16,7 @@ const Choices = ({ setCurrentScene, currentIsland, destinations, loan }) => {
       }
       {
         hasMoneyLender ?
-        <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_BORROWING)}>{'Visit Mo\' the Money Lender'}</button>
+        <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_BORROWING)}>{'Visit the Money Lender'}</button>
         : null
       }
       {
@@ -25,7 +25,11 @@ const Choices = ({ setCurrentScene, currentIsland, destinations, loan }) => {
         : null
       }
       <button onClick={setCurrentScene.bind(null, UI_SCENES.IS_LEAVING)}>{'Leave'}</button>
-      <Link href="/retire"><button>{'Retire'}</button></Link>
+      {
+        loan <= 0 ?
+        <Link href="/retire"><button>{'Retire'}</button></Link>
+        : null
+      }
       {/* TODO: check if desintation has a money lender */}
     </div>
   );

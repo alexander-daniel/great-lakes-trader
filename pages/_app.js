@@ -11,7 +11,7 @@ class MyApp extends App {
       <Container>
         <Head>
           <title>{'Great Lakes Trader'}</title>
-          <meta name="description" content="A Taipan-like game of profit and adventure on the Saint Lawrence River and Lake Ontario"/>
+          <meta name="description" content="A Taipan-like game of profit and adventure on the Saint Lawrence River and the Great Lakes"/>
         </Head>
         <Provider store={reduxStore}>
           <Component {...pageProps} />

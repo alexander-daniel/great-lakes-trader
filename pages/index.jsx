@@ -10,8 +10,8 @@ export default () => {
         <h3>{'A Taipan-like game of profit and adventure'}</h3>
         <p>
           {`
-            It is January 1st, 1810.
-            You are a small-time coureur-des-bois plying the Saint Lawrence River and Lake Ontario in search of a fast buck.
+            It is Spring, 1698.
+            You are a small-time coureur-des-bois plying the Saint Lawrence River and Great Lakes in search of a fast buck.
             It's miserable business but somebody has to do it.
             Besides, there's a fortune to be made.
           `}
@@ -27,15 +27,18 @@ export default () => {
         <p style={{ marginBottom: '20px' }}>
           {`
             But it's dangerous out there in the wilderness and you have enemies everywhere.
+
+            You've got one year to prove your worth. Everyone is eager to see how you will do.
           `}
         </p>
 
         <Link href="/trader"><button>{'Click here to start'}</button></Link>
 
 
-        <div style={{ position:'absolute', bottom: '10px' }}>
-          {'Audio Credit: snkrthief'}
-        </div>
+
+          <div style={{ position:'absolute', bottom: '10px' }}>
+            {'Audio Credit: '}<a href="https://soundcloud.com/snkrthief" target="_blank" style={{ color: '#f3f3f3'}}>{'snkrthief'}</a>
+          </div>
 
       </div>
     </div>
