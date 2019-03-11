@@ -2,9 +2,7 @@
   "version": 2,
   "name": "great-lakes-game",
   "alias": [
-    "greatlak.es",
-    "great-lakes-trader.now.sh",
-    "for-chris.now.sh"
+    "greatlak.es"
   ],
   "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
